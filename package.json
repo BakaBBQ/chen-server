@@ -1,0 +1,16 @@
+{
+  "name": "chen-server",
+  "version": "0.1.0",
+  "description": "the server for the chen search engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony index.js"
+  },
+  "author": "BakaBBQ",
+  "license": "Unlicense",
+  "dependencies": {
+    "express": "^4.13.3",
+    "google": "^1.3.0"
+  }
+}
