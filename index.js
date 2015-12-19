@@ -1,19 +1,23 @@
 "use strict"
-let express = require("express");
+const express = require("express");
+const google = require("google");
+const cors = require("express-cors");
+
+const config = require("./config");
+
 let app = express();
 
-let google = require("google");
-let config = require("./config")
+app.use(cors());
 
 google.resultsPerPage = 15;
 
-app.get('/:query', function(req, res){
-  let query = req.params.query;
+app.get('/search', function(req, res){
+  let query = req.query.str;
   var googleResults;
   google(query, function(err, next, links){
     if (err){
       console.log("Error in search!, searching: " + query);
-      googleResults = {};
+      googleResults = err;
     } else {
       googleResults = links;
     }
