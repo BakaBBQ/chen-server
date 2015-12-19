@@ -1,7 +1,7 @@
 "use strict"
 const express = require("express");
 const google = require("google");
-const cors = require("express-cors");
+const cors = require("cors");
 
 const config = require("./config");
 
